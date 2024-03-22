@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cure Ur Boredom</title>
+  </head>
+  <body>
+    <div class="border">
+      <h1>Cure Your Boredom!</h1>
+      <h3>How many people are bored?</h3>
+      <div>
+        <p><span id="number">1</span></p>
+        <input type="range" id="myInput" min="1" max="5" />
+        <div><button id="findButton">Find Activity</button></div>
+        <output id="myOutput">""</output>
+      </div>
+    </div>
+
+    <script>
+      myInput.value = 1;
+
+      findButton.onclick = getActivity;
+
+      myInput.oninput = function () {
+        number.textContent = myInput.value;
+      };
+
+      async function getActivity() {
+        let response = await fetch(
+          `https://www.boredapi.com/api/activity?participants=${number.textContent}`
+        );
+        let data = await response.json();
+        myOutput.textContent = `${data.activity}`;
+      }
+    </script>
+  </body>
+</html>

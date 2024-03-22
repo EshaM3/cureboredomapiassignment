@@ -1,0 +1,91 @@
+html {
+  background-image: url("images/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #005062;
+}
+
+body {
+  /* background-color: rgb(84, 107, 1); */
+  font-size: 1.3em;
+  text-align: center;
+  color: #edcfff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.border {
+  border: solid 5px #edcfff;
+  margin-top: 10%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.676);
+  border-radius: 10%;
+}
+
+div {
+  margin: auto;
+  width: 50%;
+}
+
+button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #edcfff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 0.9em;
+  color: #000000;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-image: linear-gradient(
+    90deg,
+    #00c0ff 0%,
+    #ffcf00 49%,
+    #fc4f4f 80%,
+    #00c0ff 100%
+  );
+  animation: slidebg 5s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
+}
+
+output {
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="range"] {
+    overflow: hidden;
+    width: 100px;
+    -webkit-appearance: none;
+    background-color: #aeaeae;
+    border-radius: 5px;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 30px;
+    -webkit-appearance: none;
+    color: #00ffff;
+    margin-top: -1px;
+    border-radius: 5px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    width: 25px;
+    -webkit-appearance: none;
+    height: 30px;
+    cursor: ew-resize;
+    background: #5e6664;
+    box-shadow: -100px 0 0 100px #00ffff;
+    border-radius: 5px;
+  }
+}
